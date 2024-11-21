@@ -1,0 +1,11 @@
+.hero {
+    height: 100vh;
+    /* background: url('/images/background.jpg') no-repeat center center/cover; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+  }
+  
