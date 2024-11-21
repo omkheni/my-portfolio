@@ -1,14 +1,14 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import "./Header.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const Header = () => {
+const Header = ({ scrollToSection, refs }) => {
+  const { heroRef, aboutRef, skillsRef, projectsRef, contactRef } = refs;
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
       <div className="container">
-        <NavLink className="navbar-brand" to="/"> Om Kheni </NavLink>
-
+        <span className="navbar-brand" href="#">Om Kheni</span>
         <button
           className="navbar-toggler"
           type="button"
@@ -24,29 +24,19 @@ const Header = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-                Home
-              </NavLink>
+              <button className="nav-link" onClick={() => scrollToSection(heroRef)}>Home</button>
             </li>
             <li className="nav-item">
-              <NavLink to="/about" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-                About
-              </NavLink>
+              <button className="nav-link" onClick={() => scrollToSection(aboutRef)}>About</button>
             </li>
             <li className="nav-item">
-              <NavLink to="/skills" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-                Skills
-              </NavLink>
+              <button className="nav-link" onClick={() => scrollToSection(skillsRef)}>Skills</button>
             </li>
             <li className="nav-item">
-              <NavLink to="/projects" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-                Projects
-              </NavLink>
+              <button className="nav-link" onClick={() => scrollToSection(projectsRef)}>Projects</button>
             </li>
             <li className="nav-item">
-              <NavLink to="/contact" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-                Contact
-              </NavLink>
+              <button className="nav-link" onClick={() => scrollToSection(contactRef)}>Contact</button>
             </li>
           </ul>
         </div>
@@ -54,5 +44,6 @@ const Header = () => {
     </nav>
   );
 };
+
 
 export default Header;
